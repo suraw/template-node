@@ -1,10 +1,7 @@
 'use strict'
 
 const express = require('express')
-
-// Constants
-const PORT = 8081
-const HOST = '0.0.0.0'
+const {host, port} = require('./config/config')
 
 // App
 const app = express()
@@ -12,5 +9,5 @@ app.get('/', (req, res) => {
   res.send('Hello world\n')
 })
 
-app.listen(PORT, HOST)
-console.log(`Running on http://${HOST}:${PORT}`)
+app.listen(port, host)
+console.log(`Running on http://${port}:${host}`)
